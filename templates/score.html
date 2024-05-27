@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Create
+{% endblock %}
+
+{% block main %}
+    <form action="/score" method="post" class="row g-3" novalidate>
+        <div class="col-md-4">
+            <label for="game_id">Game Number:</label>
+            <input autocomplete="off" autofocus class="form-control form-control-sm" id="game_id" name="game_id" type="text">
+        </div>
+        <div class="col-md-4">
+            <label for="user_1_score">Player 1 Score:</label>
+            <input autocomplete="off" autofocus class="form-control form-control-sm" id="user_1_score" name="user_1_score" type="text">
+        </div>
+        <div class="col-md-4">
+            <label for="user_2_score">Player 2 Score:</label>
+            <input autocomplete="off" autofocus class="form-control form-control-sm" id="user_2_score" name="user_2_score" type="text">
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Submit Score</button>
+        </div>
+    </form>
+{% endblock %}

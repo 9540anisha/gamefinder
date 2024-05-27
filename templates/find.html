@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Find
+{% endblock %}
+
+{% block main %}
+    <form action="/find" method="post" class="row g-3">
+        <tbody>
+            <div class="row">
+                {% for row in requests %}
+                    <div class="col-sm-6">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ row['location'] }}</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Name: {{ row['name'] }}</h6>
+                                <h6 class = "card-subtitle mb-2 text-muted">Start time: {{ row['time_start'] }}</h6>
+                                <h6 class = "card-subtitle mb-2 text-muted">End time: {{ row['time_end'] }}</h6>
+                                <div class="col-12">
+                                <button type="submit" class="btn btn-primary">Select</button>
+                                <input type="hidden" id="request_id" name="request_id" value="{{ row['request_id'] }}">
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </tbody>
+    </form>
+{% endblock %}
